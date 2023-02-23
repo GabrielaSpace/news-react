@@ -23,6 +23,9 @@ class List extends Component {
   setTimeout(() => {this.setState({ showMessage: false })}, 5000);
 
  }
+ removeAllArticles = () => {
+  this.setState({Articles:[]})
+}
 
 
   render() {
@@ -30,11 +33,16 @@ class List extends Component {
       <><Form onSubmit={this.addArticle} /><div className="container-articles">
         {this.state.showMessage && <div className='showMessage'> {this.state.showMessage}</div>}
         {this.state.Articles.map((Article) => <Card key={Article.id} id={Article.id} title={Article.title} description= {Article.description} 
-        published_data= {Article.published_data} byline={Article.byline} photoUrl={Article.photoUrl} photoCaption= {Article.photoCaption} removeArticle={this.removeArticle}/>
+        published_data= {Article.published_data} byline={Article.byline} photoUrl={Article.photoUrl} photoCaption= {Article.photoCaption} 
+        removeArticle={this.removeArticle} />
         )}
+      </div>
+      <div className="buttons">
+        <button className="removeAll" onClick={this.removeAllArticles}> Remove All </button>
+      </div>
+      
+      </>
 
-
-      </div></>
     );
   }
 }
