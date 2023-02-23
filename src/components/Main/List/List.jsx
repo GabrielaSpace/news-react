@@ -12,11 +12,17 @@ class List extends Component {
   }
   addArticle = (Article) => {
   const updateArticles = [Article, ...this.state.Articles];
-  this.setState({ Articles: updateArticles, showMessage: `Added article: ${Article.title}` });
+  this.setState({ Articles: updateArticles, showMessage: `The article ${Article.title} has been added` });
   setTimeout(() => {this.setState({ showMessage: false })}, 5000);
   console.log(Article);
 }
- 
+ removeArticle = (id) => {
+  const updateArticles = this.state.Articles.filter(
+  Article => Article.id !== id)
+  this.setState({Articles: updateArticles, showMessage: `The article has been removed` });
+  setTimeout(() => {this.setState({ showMessage: false })}, 5000);
+
+ }
 
 
   render() {
@@ -24,7 +30,7 @@ class List extends Component {
       <><Form onSubmit={this.addArticle} /><div className="container-articles">
         {this.state.showMessage && <div className='showMessage'> {this.state.showMessage}</div>}
         {this.state.Articles.map((Article) => <Card key={Article.id} id={Article.id} title={Article.title} description= {Article.description} 
-        published_data= {Article.published_data} byline={Article.byline} photoUrl={Article.photoUrl} bylinePhoto= {Article.bylinePhoto} />
+        published_data= {Article.published_data} byline={Article.byline} photoUrl={Article.photoUrl} photoCaption= {Article.photoCaption} removeArticle={this.removeArticle}/>
         )}
 
 
