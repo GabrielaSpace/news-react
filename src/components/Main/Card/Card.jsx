@@ -9,8 +9,8 @@ class Card extends Component {
         <p>{this.props.published_data}</p>
         <p>{this.props.byline}</p>
         <img src={this.props.photoUrl} alt="" />
-        <img src={this.props.bylinePhoto} alt="" />
-        <div className="deleteButton" onClick={() => this.props.deleteArticle(this.props.id)}> Remove</div>
+        <p>Photo caption: {this.props.photoCaption}</p>
+        <div className="removeButton" onClick={() => this.props.removeArticle(this.props.id)}> <button>Remove</button></div>
       </div>
     );
   }

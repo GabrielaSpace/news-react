@@ -12,7 +12,7 @@ class Form extends Component {
       published_data: '',
       byline: '',
       photoUrl: '',
-      bylinePhoto:''
+      photoCaption:''
 
     }
    
@@ -30,12 +30,12 @@ class Form extends Component {
         published_data: this.state.published_data,
         byline: this.state.byline,
         photoUrl: this.state.photoUrl,
-        bylinePhoto: this.state.bylinePhoto,
+        photoCaption: this.state.photoCaption,
 
         
     }
     this.props.onSubmit(newArticle);
-    this.setState({title: '', description: '', published_data: '', byline: '', photoUrl: '', bylinePhoto:''});
+    this.setState({title: '', description: '', published_data: '', byline: '', photoUrl: '', photoCaption:''});
 }
 
   render() {
@@ -45,7 +45,7 @@ class Form extends Component {
         <input className='input' type='date' placeholder='Write a published data' name='published_data' value={this.state.published_data} onChange={this.handleChange} />
         <input className='input' type='text' placeholder='Write a author' name='byline' value={this.state.byline} onChange={this.handleChange} />
         <input className='input' type='text' placeholder='Write an url' name='photoUrl' value={this.state.photoUrl} onChange={this.handleChange} />
-        <input className='input' type='text' placeholder='Write a byline Photo' name='bylinePhoto' value={this.state.bylinePhoto} onChange={this.handleChange} />
+        <input className='input' type='text' placeholder='photo caption' name='photoCaption' value={this.state.photoCaption} onChange={this.handleChange} />
         <button className='button'>Add article</button>
         
 
