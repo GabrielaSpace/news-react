@@ -19,17 +19,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>noticias</h1>
       <BrowserRouter>
       <userContext.Provider value={data}>
-        <Header />
+      <Header />
         <Main />
         </userContext.Provider>
       </BrowserRouter>
       <Footer />
-      <NotFound />
-  
-         
     </div>
   );
 }
