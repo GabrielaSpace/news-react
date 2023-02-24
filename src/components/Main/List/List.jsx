@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Card from "../Card/Card";
 import Form from "../Form/Form";
+import { v4 as uuidv4 } from 'uuid';
+
 
 class List extends Component {
   constructor(props){
@@ -44,11 +46,11 @@ componentWillUnmount() {
   setTimeout(() => {this.setState({ showMessage: false })}, 5000);
   console.log(Article);
 }
- removeArticle = (id) => {
+ removeArticle = (i) => {
   const updateArticles = this.state.Articles.filter(
-  Article => Article.id !== id)
+  (Article,j )=> j !== i)
   this.setState({Articles: updateArticles, showMessage: `The article has been removed` });
-  setTimeout(() => {this.setState({ showMessage: false })}, 5000);
+  // setTimeout(() => {this.setState({ showMessage: false })}, 5000);
 
  }
  removeAllArticles = () => {
@@ -60,9 +62,9 @@ componentWillUnmount() {
     return (
       <><Form onSubmit={this.addArticle} /><div className="container-articles">
         {this.state.showMessage && <div className='showMessage'> {this.state.showMessage}</div>}
-        {this.state.Articles.map((Article) => <Card key={Article.id} id={Article.id} title={Article.title} abstract= {Article.abstract} 
-        published_date= {Article.published_date} byline={Article.byline} photoUrl={Article.photoUrl} url= {Article.url} 
-        removeArticle={this.removeArticle} />
+        {this.state.Articles.map((Article, i) => <Card key={uuidv4()} id={i} title={Article.title} abstract= {Article.abstract} 
+        published_date= {Article.published_date} byline={Article.byline} url= {Article.url} 
+        removeArticle ={()=>this.removeArticle(i)} />
         )}
       </div>
       <div className="buttons">

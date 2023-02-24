@@ -10,7 +10,6 @@ class Card extends Component {
         <p>{this.props.abstract}</p>
         <p>{this.props.published_date.slice(0,10)}</p>
         <p>{this.props.byline}</p>
-        <img src={this.props.photoUrl} alt="" />
         <div className="removeButton" onClick={() => this.props.removeArticle(this.props.id)} > <button>Remove</button></div>
       </div>
     );

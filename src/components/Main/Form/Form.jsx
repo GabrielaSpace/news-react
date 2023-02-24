@@ -11,7 +11,6 @@ class Form extends Component {
       abstract: '',
       published_date: '',
       byline: '',
-      photoUrl: '',
       url:''
 
     }
@@ -29,13 +28,11 @@ class Form extends Component {
         abstract: this.state.abstract,
         published_date: this.state.published_date,
         byline: this.state.byline,
-        photoUrl: this.state.photoUrl,
-        url: this.state.url,
+        url: this.state.url
 
-        
     }
     this.props.onSubmit(newArticle);
-    this.setState({title: '', abstract: '', published_date: '', byline: '', photoUrl: '', url:''});
+    this.setState({title: '', abstract: '', published_date: '', byline: '', url:''});
 }
 
   render() {
@@ -44,8 +41,7 @@ class Form extends Component {
         <input className='input' type='text' placeholder='Write an abstract' name='abstract' value={this.state.abstract} onChange={this.handleChange} />
         <input className='input' type='date' placeholder='Write a published data' name='published_date' value={this.state.published_date} onChange={this.handleChange} />
         <input className='input' type='text' placeholder='Write a author' name='byline' value={this.state.byline} onChange={this.handleChange} />
-        <input className='input' type='text' placeholder='Write an url' name='photoUrl' value={this.state.photoUrl} onChange={this.handleChange} />
-        <input className='input' type='text' placeholder='url' name='url' value={this.state.url} onChange={this.handleChange} />
+        <input className='input' type='text' placeholder='Write an url' name='url' value={this.state.url} onChange={this.handleChange} />
         <button className='button'>Add article</button>
         
 
