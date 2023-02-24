@@ -10,6 +10,34 @@ class List extends Component {
       Articles:[]
     }
   }
+
+
+  async componentDidMount() {
+    await new Promise((resolve, reject) => setTimeout(resolve, 3000, "waiting..."))
+    const chosenTopic = 'science';
+    const resp = await fetch(`https://api.nytimes.com/svc/topstories/v2/${chosenTopic}.json?api-key=${process.env.REACT_APP_API_KEY}`);
+    const data = await resp.json();
+    const dataApi = data.results;
+    const defaultNews= dataApi.slice(2,7) 
+
+    this.setState({
+      Articles: defaultNews
+    })   
+}
+
+componentDidUpdate(prevProps, prevState) {
+  if (prevState.Articles !== this.state.Articles) {
+    // this.setState({Articles:this.props.defaultNews})
+  
+  }
+}
+componentWillUnmount() {
+  console.log('componentWillUnmount');
+ 
+}
+
+
+
   addArticle = (Article) => {
   const updateArticles = [Article, ...this.state.Articles];
   this.setState({ Articles: updateArticles, showMessage: `The article ${Article.title} has been added` });
@@ -32,8 +60,8 @@ class List extends Component {
     return (
       <><Form onSubmit={this.addArticle} /><div className="container-articles">
         {this.state.showMessage && <div className='showMessage'> {this.state.showMessage}</div>}
-        {this.state.Articles.map((Article) => <Card key={Article.id} id={Article.id} title={Article.title} description= {Article.description} 
-        published_data= {Article.published_data} byline={Article.byline} photoUrl={Article.photoUrl} photoCaption= {Article.photoCaption} 
+        {this.state.Articles.map((Article) => <Card key={Article.id} id={Article.id} title={Article.title} abstract= {Article.abstract} 
+        published_date= {Article.published_date} byline={Article.byline} photoUrl={Article.photoUrl} url= {Article.url} 
         removeArticle={this.removeArticle} />
         )}
       </div>
