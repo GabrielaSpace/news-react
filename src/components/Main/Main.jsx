@@ -9,7 +9,8 @@ class Main extends Component {
     return (
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/news" element={<List />} />
+        <Route path="/news" element={<List showForm={false} />} />
+        <Route path="/form" element={<List showForm={true} />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     );

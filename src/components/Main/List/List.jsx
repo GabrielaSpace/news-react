@@ -27,18 +27,6 @@ class List extends Component {
     })   
 }
 
-componentDidUpdate(prevProps, prevState) {
-  if (prevState.Articles !== this.state.Articles) {
-    // this.setState({Articles:this.props.defaultNews})
-  
-  }
-}
-componentWillUnmount() {
-  console.log('componentWillUnmount');
- 
-}
-
-
 
   addArticle = (Article) => {
   const updateArticles = [Article, ...this.state.Articles];
@@ -50,7 +38,7 @@ componentWillUnmount() {
   const updateArticles = this.state.Articles.filter(
   (Article,j )=> j !== i)
   this.setState({Articles: updateArticles, showMessage: `The article has been removed` });
-  // setTimeout(() => {this.setState({ showMessage: false })}, 5000);
+  setTimeout(() => {this.setState({ showMessage: false })}, 5000);
 
  }
  removeAllArticles = () => {
@@ -59,19 +47,32 @@ componentWillUnmount() {
 
 
   render() {
+    const { showForm } = this.props;
     return (
-      <><Form onSubmit={this.addArticle} /><div className="container-articles">
-        {this.state.showMessage && <div className='showMessage'> {this.state.showMessage}</div>}
-        {this.state.Articles.map((Article, i) => <Card key={uuidv4()} id={i} title={Article.title} abstract= {Article.abstract} 
-        published_date= {Article.published_date} byline={Article.byline} url= {Article.url} 
-        removeArticle ={()=>this.removeArticle(i)} />
-        )}
-      </div>
-      <div className="buttons">
-        <button className="removeAll" onClick={this.removeAllArticles}> Remove All </button>
-      </div>
-      
-      </>
+      <>
+  {showForm ? (
+    <>
+      <Form onSubmit={this.addArticle} />
+      {this.state.showMessage && <div className="showMessage">{this.state.showMessage}</div>}
+    </>
+  ) : (
+    <div className="container-articles">
+      {this.state.Articles.map((Article, i) => (
+        <Card
+          key={uuidv4()}
+          id={i}
+          title={Article.title}
+          abstract={Article.abstract}
+          published_date={Article.published_date}
+          byline={Article.byline}
+          url={Article.url}
+          removeArticle={() => this.removeArticle(i)}
+        />
+      ))}
+    </div>
+  )}
+</>
+
 
     );
   }
