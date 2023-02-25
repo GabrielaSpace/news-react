@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Card from "../Card/Card";
+import Card from "./Card/Card";
 import Form from "../Form/Form";
 import { v4 as uuidv4 } from 'uuid';
 

@@ -36,16 +36,16 @@ class Form extends Component {
 }
 
   render() {
-    return <form className="form-Article" onSubmit={this.handleSubmit}>
+    return (<form onSubmit={this.handleSubmit}>
         <input className='input' type='text' placeholder='Write a Title' name='title' value={this.state.title} onChange={this.handleChange} />
         <input className='input' type='text' placeholder='Write an abstract' name='abstract' value={this.state.abstract} onChange={this.handleChange} />
         <input className='input' type='date' placeholder='Write a published data' name='published_date' value={this.state.published_date} onChange={this.handleChange} />
         <input className='input' type='text' placeholder='Write a author' name='byline' value={this.state.byline} onChange={this.handleChange} />
         <input className='input' type='text' placeholder='Write an url' name='url' value={this.state.url} onChange={this.handleChange} />
         <button className='button'>Add article</button>
-        
+    </form>
+    )
 
-    </form>;
   }
 }
 
