@@ -54,7 +54,7 @@ To install and run this project in your local environment, follow these steps:
 
 In this project I have used the [NYT API](https://developer.nytimes.com/apis).
 
-I also invite you to visit my website [NewsApp](https://63fa3ec42c7bf9000862c930--snazzy-frangipane-a5f6c7.netlify.app/) and so you can interact with the application.
+I also invite you to visit my website [NewsApp](https://deploy-preview-10--snazzy-frangipane-a5f6c7.netlify.app/) and so you can interact with the application.
 
 Here is a view of the app :sparkles:
 
