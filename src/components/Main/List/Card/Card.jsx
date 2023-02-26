@@ -1,19 +1,29 @@
 import React, { Component } from "react";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import '../Card/Card.css'
 
 
 
-class Card extends Component {
+
+class CardComponent extends Component {
   render() {
     return (
-      <div className="card">
-        <a href={this.props.url} target="_blank" rel="noopener noreferrer"><h2>{this.props.title}</h2></a>
-        <p>{this.props.abstract}</p>
-        <p>{this.props.published_date.slice(0,10)}</p>
-        <p>{this.props.byline}</p>
-        <div className="removeButton" onClick={() => this.props.removeArticle(this.props.id)} > <button>Remove</button></div>
-      </div>
+      <Card style={{ width: '18rem' }} className='container-new'>
+        <Card.Body>
+        <Card.Title className="cardTitle">{this.props.title}</Card.Title>
+        <Card.Subtitle>{this.props.byline}</Card.Subtitle>
+        <Card.Text>{this.props.published_date.slice(0,10)}</Card.Text>
+        <Card.Text>{this.props.abstract}</Card.Text>
+        <div className="cardButtons">
+        <Button variant="outline-danger"><Card.Link className="cardLink" href={this.props.url} target="_blank" rel="noopener noreferrer">See more</Card.Link></Button>
+        <div className="removeButton" onClick={() => this.props.removeArticle(this.props.id)} > 
+        <Button variant="outline-danger" >Remove</Button></div>
+        </div>
+        </Card.Body>
+      </Card>
     );
   }
 }
 
-export default Card;
+export default CardComponent;

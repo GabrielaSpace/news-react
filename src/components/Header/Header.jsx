@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Nav from "./Nav/Nav";
+import Naveg from "./Nav/Naveg";
 
 class Header extends Component {
   render() {
     return (
       <header>
-      <Nav />
+      <Naveg />
       </header>
 
     );

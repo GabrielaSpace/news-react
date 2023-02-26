@@ -1,0 +1,14 @@
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap column;
+}
+
+.inputHome{
+    padding: 15px;
+    margin: 15px;
+    width: 320px;
+    text-align: center;
+    height: 50px;
+}
