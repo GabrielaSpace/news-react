@@ -1,70 +1,76 @@
+## NewsApp :bookmark_tabs:📰
+ 
+   This project is a React-based application that displays news articles from the New York Times API, with a focus on the topic of science.
+
+
+**Features and Endpoints:** 
+
+
+*Home:* users can add their name to log in.
+
+*News list*: users can see a list of 6 articles retrieved from the API, as well as any articles that have been added in the "Add an article" view
+
+*Add an article:*  users can add customized news articles with a title, abstract, date, and link. Upon pressing the "Add" button, a message will appear indicating that the article has been added and can be viewed in the news section.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+**Installation Instructions**
+To install and run this project in your local environment, follow these steps:
 
-### `npm start`
+ - Clone the repository to your local environment:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+		git clone https://github.com/GabrielaSpace/news-react.git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ - Install the necessary dependencies:
 
-### `npm test`
+		npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ - Start the application:
 
-### `npm run build`
+		npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## General endpoints of the app :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ -  Home
 
-### `npm run eject`
+		http://localhost:3000/
+		
+ -   News list
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+	     http://localhost:3000/news
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ -   Add an article
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+	     http://localhost:3000/form
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In this project I have used the [NYT API](https://developer.nytimes.com/apis).
 
-### Code Splitting
+I also invite you to visit my website [NewsApp](https://63fa3ec42c7bf9000862c930--snazzy-frangipane-a5f6c7.netlify.app/) and so you can interact with the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Here is a view of the app :sparkles:
 
-### Analyzing the Bundle Size
+ ![view news](https://github.com/GabrielaSpace/MovieApp/blob/develop/public/assets/view.png)
+ 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## contributions
 
-### Deployment
+This project is open to contributions. If you would like to collaborate, please submit a pull request. Thanks for getting here. :heartpulse::wink: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## This project was done by:
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Gabriela García](https://github.com/GabrielaSpace)
+

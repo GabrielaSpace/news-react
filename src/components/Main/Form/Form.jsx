@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import '../Form/Form.css'
+
 
 
 class Form extends Component {
@@ -8,11 +10,10 @@ class Form extends Component {
 
     this.state = {
       title: '',
-      description: '',
-      published_data: '',
+      abstract: '',
+      published_date: '',
       byline: '',
-      photoUrl: '',
-      bylinePhoto:''
+      url:''
 
     }
    
@@ -26,30 +27,28 @@ class Form extends Component {
     const newArticle = {
         id: uuidv4(),
         title: this.state.title,
-        description: this.state.description,
-        published_data: this.state.published_data,
+        abstract: this.state.abstract,
+        published_date: this.state.published_date,
         byline: this.state.byline,
-        photoUrl: this.state.photoUrl,
-        bylinePhoto: this.state.bylinePhoto,
+        url: this.state.url
 
-        
     }
     this.props.onSubmit(newArticle);
-    this.setState({title: '', description: '', published_data: '', byline: '', photoUrl: '', bylinePhoto:''});
+    this.setState({title: '', abstract: '', published_date: '', byline: '', url:''});
 }
 
   render() {
-    return <form className="form-Article" onSubmit={this.handleSubmit}>
+    return (<form onSubmit={this.handleSubmit}>
+        <h1>Add an article</h1>
         <input className='input' type='text' placeholder='Write a Title' name='title' value={this.state.title} onChange={this.handleChange} />
-        <input className='input' type='text' placeholder='Write a description' name='description' value={this.state.description} onChange={this.handleChange} />
-        <input className='input' type='date' placeholder='Write a published data' name='published_data' value={this.state.published_data} onChange={this.handleChange} />
-        <input className='input' type='text' placeholder='Write a author' name='byline' value={this.state.byline} onChange={this.handleChange} />
-        <input className='input' type='text' placeholder='Write an url' name='photoUrl' value={this.state.photoUrl} onChange={this.handleChange} />
-        <input className='input' type='text' placeholder='Write a byline Photo' name='bylinePhoto' value={this.state.bylinePhoto} onChange={this.handleChange} />
-        <button className='button'>Add article</button>
-        
+        <input className='input' type='text' placeholder='Write an abstract' name='abstract' value={this.state.abstract} onChange={this.handleChange} />
+        <input className='input' type='date' placeholder='Write a published data' name='published_date' value={this.state.published_date} onChange={this.handleChange} />
+        <input className='input' type='text' placeholder='Write an author' name='byline' value={this.state.byline} onChange={this.handleChange} />
+        <input className='input' type='text' placeholder='Write an url' name='url' value={this.state.url} onChange={this.handleChange} />
+        <button variant="outline-danger">Add article</button>
+    </form>
+    )
 
-    </form>;
   }
 }
 
