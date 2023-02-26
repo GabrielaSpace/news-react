@@ -1,7 +1,14 @@
 import React, { Component } from "react";
-import Card from "./Card/Card";
+import CardComponent from "./Card/Card";
 import Form from "../Form/Form";
 import { v4 as uuidv4 } from 'uuid';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import '../List/List.css'
+
+
+
+
 
 
 class List extends Component {
@@ -20,7 +27,7 @@ class List extends Component {
     const resp = await fetch(`https://api.nytimes.com/svc/topstories/v2/${chosenTopic}.json?api-key=${process.env.REACT_APP_API_KEY}`);
     const data = await resp.json();
     const dataApi = data.results;
-    const defaultNews= dataApi.slice(2,7) 
+    const defaultNews= dataApi.slice(2,8) 
 
     this.setState({
       Articles: defaultNews
@@ -30,7 +37,7 @@ class List extends Component {
 
   addArticle = (Article) => {
   const updateArticles = [Article, ...this.state.Articles];
-  this.setState({ Articles: updateArticles, showMessage: `The article ${Article.title} has been added` });
+  this.setState({ Articles: updateArticles, showMessage: `The article ${Article.title} has been added.You will be able to see it in the News section.` });
   setTimeout(() => {this.setState({ showMessage: false })}, 5000);
   console.log(Article);
 }
@@ -57,8 +64,11 @@ class List extends Component {
     </>
   ) : (
     <div className="container-articles">
+      <Container>
+      <Row>
+  
       {this.state.Articles.map((Article, i) => (
-        <Card
+        <CardComponent
           key={uuidv4()}
           id={i}
           title={Article.title}
@@ -69,6 +79,9 @@ class List extends Component {
           removeArticle={() => this.removeArticle(i)}
         />
       ))}
+      
+      </Row>
+      </Container>
     </div>
   )}
 </>
