@@ -1,3 +1,4 @@
+
 ## NewsApp :bookmark_tabs:📰
  
    This project is a React-based application that displays news articles from the New York Times API, with a focus on the topic of science.
@@ -58,7 +59,7 @@ I also invite you to visit my website [NewsApp](https://63fa3ec42c7bf9000862c930
 
 Here is a view of the app :sparkles:
 
- ![view news](https://github.com/GabrielaSpace/MovieApp/blob/develop/public/assets/view.png)
+ ![view news](https://github.com/GabrielaSpace/news-react/blob/main/public/assets/view.png)
  
 
 
